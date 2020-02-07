@@ -1,10 +1,24 @@
 <resources>
     <string name="app_name">Charades</string>
-    <string name="your_word_is">Your word is ...</string>
+    <string name="your_word_is">Your word is …</string>
     <string name="score">Score: 0</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="How_to_play">
+        Charades is a word guessing game.
+        A player acts out the word on the screen, while other player(s) try to guess the word.
+        \n\n
+        Interesting Features:
+        \n
+        1. There is an in-built timer, so you do not have to worry about a physical stopwatch.
+        \n\n
+        2. You don\'t have to necessarily keep count. You can just try to beat the high score.
+        \n\n
+        I had fun making this, and hope you have fun playing it.
+        \n
+        \n
+        Cheers. Zennymorh.
+    </string>
     <string name="title">Charades</string>
     <string name="welcome">Welcome to</string>
     <string name="play">Play</string>
@@ -12,4 +26,10 @@
     <string name="got_it">GOT IT</string>
     <string name="time">0:0</string>
     <string name="cat">Cat</string>
+
+    <string name="score_view_string">You scored:</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="how_to_play">How To Play</string>
+    <string name="high_score">High Score</string>
+    <string name="high_score_text">High Score: 0</string>
 </resources>

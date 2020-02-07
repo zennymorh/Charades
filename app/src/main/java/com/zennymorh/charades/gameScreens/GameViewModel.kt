@@ -1,23 +1,21 @@
 package com.zennymorh.charades.gameScreens
 
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlin.time.minutes
 
 class GameViewModel : ViewModel() {
 
     val ONE_SEC = 1000L
-    val COUNTDOWN_TIMER = 60000L
+    val COUNTDOWN_TIMER = 15000L
 
     private lateinit var wordList: MutableList<String>
     private val _word = MutableLiveData<String>()
     private val _score = MutableLiveData<Int>()
     private val _timeLeft = MutableLiveData<Int>()
     private val timer: CountDownTimer
-//    private val _gameFinished = MutableLiveData<Boolean>()
+    private val _gameFinished = MutableLiveData<Boolean>()
 
     val word: LiveData<String>
         get() = _word
@@ -25,11 +23,11 @@ class GameViewModel : ViewModel() {
         get() = _score
     val timeLeft: LiveData<Int>
         get() = _timeLeft
-//    val gameFinished: LiveData<Boolean>
-//        get() = _gameFinished
+    val gameFinished: LiveData<Boolean>
+        get() = _gameFinished
 
     init {
-//        _gameFinished.value = false
+        _gameFinished.value = false
         resetList()
         next()
         _score.value = 0
@@ -40,9 +38,14 @@ class GameViewModel : ViewModel() {
             }
 
             override fun onFinish() {
-//                _eventGameFinished.value = true
+                _gameFinished.value = true
             }
         }.start()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        timer.cancel()
     }
 
     private fun next() {
@@ -64,9 +67,9 @@ class GameViewModel : ViewModel() {
         next()
     }
 
-//    fun onGameFinish() {
-//        _gameFinished.value = false
-//    }
+    fun onGameFinish() {
+        _gameFinished.value = false
+    }
 
     private fun resetList(){
         wordList = mutableListOf(
@@ -157,7 +160,6 @@ class GameViewModel : ViewModel() {
             "Limbo",
             "Swing",
             "Disco",
-            "Macarena",
             "Sword",
             "Dizzy",
             "Paint",

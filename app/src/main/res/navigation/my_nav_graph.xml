@@ -6,16 +6,46 @@
     app:startDestination="@id/titleFragment4">
     <fragment
         android:id="@+id/titleFragment4"
-        android:name="com.zennymorh.charades.TitleFragment"
+        android:name="com.zennymorh.charades.titleFragment.TitleFragment"
         android:label="Welcome"
         tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment4_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_titleFragment4_to_howToPlayFragment"
+            app:destination="@id/howToPlayFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.zennymorh.charades.gameScreens.GameFragment"
         android:label="Game"
-        tools:layout="@layout/game_fragment" />
+        tools:layout="@layout/game_fragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_scoreFragment"
+            app:destination="@+id/scoreFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@+id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.zennymorh.charades.scoreFragments.ScoreFragment"
+        android:label="Your Score"
+        tools:layout="@layout/score_fragment">
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_scoreFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@+id/scoreFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/howToPlayFragment"
+        android:name="com.zennymorh.charades.menuFragments.HowToPlayFragment"
+        android:label="How To Play"
+        tools:layout="@layout/fragment_how_to_play" />
 </navigation>
