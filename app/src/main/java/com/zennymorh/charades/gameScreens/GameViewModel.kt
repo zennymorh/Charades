@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 class GameViewModel : ViewModel() {
 
     val ONE_SEC = 1000L
-    val COUNTDOWN_TIMER = 15000L
+    val COUNTDOWN_TIMER = 60000L
 
     private lateinit var wordList: MutableList<String>
     private val _word = MutableLiveData<String>()
