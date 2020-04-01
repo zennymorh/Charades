@@ -16,7 +16,7 @@ import com.zennymorh.charades.BuildConfig
 
 class ScoreFragment : Fragment() {
 
-    var newScore = 0
+    private var newScore = 0
     private lateinit var sharedPreferences: SharedPreferences
 
 
@@ -47,7 +47,7 @@ class ScoreFragment : Fragment() {
         actual_score.text = newScore.toString()
         playAgain()
 
-        var prevHighScore = sharedPreferences.getInt("HighScore",0)
+        val prevHighScore = sharedPreferences.getInt("HighScore",0)
         if (prevHighScore < newScore) {
             val editor = sharedPreferences.edit()
             editor.putInt("HighScore", newScore)

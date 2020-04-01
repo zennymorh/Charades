@@ -3,11 +3,9 @@ package com.zennymorh.charades.titleFragment
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.zennymorh.charades.R
 import com.zennymorh.charades.databinding.FragmentTitleBinding
