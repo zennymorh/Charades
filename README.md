@@ -9,6 +9,7 @@ This image shows the title screen and the option menu. The option menu takes you
 <img src=https://raw.githubusercontent.com/zennymorh/Charades/master/app/src/main/res/drawable/title.png alt="Title" width=600 height=300/>
 
 This image shows the game screen.
+
 <img src=https://raw.githubusercontent.com/zennymorh/Charades/master/app/src/main/res/drawable/game.png alt="Game" width=600 height=300/>
 
 This image shows your final score and the highest score in the history of the game.
